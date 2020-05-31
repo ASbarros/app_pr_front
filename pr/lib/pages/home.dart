@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pr/providers/provider.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -11,8 +12,10 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  String teste='init';
 
   void _incrementCounter() {
+    Provider.getQuestion().then((value) => teste=value);
     setState(() {
       _counter++;
     });
@@ -29,7 +32,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'You have pushed the button this many times:',
+              teste,
             ),
             Text(
               '$_counter',
