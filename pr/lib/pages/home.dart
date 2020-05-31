@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pr/providers/provider.dart';
+import 'package:pr/models/questions.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -11,8 +11,20 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  String teste = 'init';
   int _currValue = 1;
+
+  Question question;
+
+  @override
+  void initState() {
+    question = Question();
+    super.initState();
+    Question.get().then((value) {
+      setState(() {
+        question.description = value.description;
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   bottom: 20.0,
                                   left: 25.0,
                                   right: 25.0),
-                              child: Text(teste)),
+                              child: Text(question.description)),
                           Container(
                             width: 250.0,
                             height: 1.0,
