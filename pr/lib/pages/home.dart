@@ -80,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                           setState(() => _currValue = i),
                                       value: 1,
                                     ),
-                                    Text('data')
+                                    Text(question.answers[0].description)
                                   ],
                                 ),
                                 Row(
