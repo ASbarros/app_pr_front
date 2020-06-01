@@ -1,8 +1,11 @@
+import 'package:flutter/material.dart';
+
 class Answer {
   Answer();
-  String description;
+  String description = '';
   bool right;
   int question;
+  Color color = Colors.white;
 
   Answer.fromJson(Map<String, dynamic> json)
       : description = json['description'],
@@ -10,9 +13,10 @@ class Answer {
         question = json['question'];
 
   static List<Answer> listFromJson(List<dynamic> json) {
-    Answer answer = Answer();
-    answer.description = 'teste';
-    List<Answer> list = [answer, answer, answer, answer];
+    List<Answer> list = [];
+    json.forEach((element) {
+      list.add(Answer.fromJson(element));
+    });
     return list;
   }
 }
