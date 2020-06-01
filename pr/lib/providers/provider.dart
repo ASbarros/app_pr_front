@@ -7,7 +7,7 @@ class Provider {
   static Future<Object> get({String router}) async {
     Environment env = Environment();
 
-    var response = await http.get(env.serve + 'teste',
+    var response = await http.get(env.serve + router,
         headers: {"Content-Type": "application/json"});
 
     return json.decode(response.body);
