@@ -76,9 +76,8 @@ class _MyHomePageState extends State<MyHomePage> {
                           value: index,
                         ),
                         Flexible(
-                                                  child: Text(question.answers[index].description,
-                              softWrap: true,
-                              style: TextStyle(fontSize: 13.0)),
+                          child: Text(question.answers[index].description,
+                              softWrap: true, style: TextStyle(fontSize: 13.0)),
                         ),
                       ],
                     ),
