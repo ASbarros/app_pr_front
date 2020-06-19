@@ -1,4 +1,5 @@
 lib/providers/environment/.env
+android/key.properties
 
 # Miscellaneous
 *.class
